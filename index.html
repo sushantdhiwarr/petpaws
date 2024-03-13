@@ -1,0 +1,513 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://www.webflow.com  -->
+<!--  Last Published: Wed Mar 13 2024 08:08:27 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="652d29c422ff746542226b49" data-wf-site="652d29c322ff746542226acc" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pet Paws</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/petpaws.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Manrope:regular,500,600,700,800"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.svg" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+</head>
+<body class="body">
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+</style>
+      <style>
+  html { font-size: calc(0.625rem + 0.41666666666666663vw); }
+  @media screen and (max-width:1920px) { html { font-size: calc(0.625rem + 0.41666666666666674vw); } }
+  @media screen and (max-width:1440px) { html { font-size: 1rem; } }
+  @media screen and (max-width:479px) { html { font-size: calc(0.8747384937238494rem + 0.41841004184100417vw); } }
+</style>
+    </div>
+    <div data-animation="over-left" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar_component w-nav">
+      <div class="nav_container">
+        <a href="#" class="brand_logo-link w-nav-brand"><img src="images/Logo-PP.svg" loading="lazy" alt="petpaws logo" class="brand_logo-img"></a>
+        <nav role="navigation" class="nav_menu w-nav-menu">
+          <a href="#section-services" class="nav_link w-nav-link">Services</a>
+          <a href="#section-testimonials" class="nav_link w-nav-link">Testimonials</a>
+          <a href="#section-articles" class="nav_link w-nav-link">Articles</a>
+          <a href="#section-CTA" class="nav_link w-nav-link">Contact</a>
+        </nav>
+        <div class="menu_button w-nav-button">
+          <div class="menu_burger-icon w-icon-nav-menu"></div>
+        </div>
+      </div>
+    </div>
+    <main class="main-wrapper">
+      <section class="section_hero-component">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="hero_wrapper">
+                <div class="hero_content-wrapper">
+                  <h1>Affordable pet care &amp; grooming services for your beloved companion!</h1>
+                  <div class="margin-vertical margin-medium">
+                    <p>Providing quality care tailored to your pet&#x27;s needs.</p>
+                  </div>
+                  <a href="#section-CTA" class="button w-button">Schedule appointment</a>
+                </div>
+                <div class="hero_left-img-wrapper"><img src="images/Hero-img-petpaws_1Hero-img-petpaws.webp" loading="lazy" sizes="(max-width: 479px) 92vw, (max-width: 767px) 95vw, (max-width: 991px) 46vw, (max-width: 3228px) 50vw, 1614px" width="1614" alt="People playing with their own pets" srcset="images/Hero-img-petpaws_1-p-500.png 500w, images/Hero-img-petpaws_1-p-800.png 800w, images/Hero-img-petpaws_1-p-1080.png 1080w, images/Hero-img-petpaws_1Hero-img-petpaws.webp 1614w" class="hero_img"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero_bg-wrapper"><img src="images/Hero-BG-petpaws_1Hero-BG-petpaws.webp" loading="lazy" width="1461.5" sizes="(max-width: 991px) 100vw, 1461.5px" alt="A yellow object with a black background." srcset="images/Hero-BG-petpaws_1-p-500.png 500w, images/Hero-BG-petpaws_1-p-800.png 800w, images/Hero-BG-petpaws_1-p-1080.png 1080w, images/Hero-BG-petpaws_1-p-1600.png 1600w, images/Hero-BG-petpaws_1-p-2000.png 2000w, images/Hero-BG-petpaws_1Hero-BG-petpaws.webp 2923w" class="hero_bg-img"></div>
+        <div class="hero_overflow-embed w-embed">
+          <style>
+	.section_hero-component {
+  	overflow: clip;
+  }
+</style>
+        </div>
+      </section>
+      <section id="section-services" class="section_services">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="services_wrapper">
+                <h2>Services we offer</h2>
+                <div class="services_inner-wrapper">
+                  <div data-w-id="3b897bba-0346-4308-1bd1-38415924371a" style="-webkit-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0.1" class="services_content-wrapper">
+                    <div class="service_content-img-wrapper"><img src="images/Service-1-main_1Service-1-main.webp" loading="lazy" width="564.5" sizes="(max-width: 479px) 82vw, (max-width: 767px) 66vw, (max-width: 991px) 45vw, 43vw" alt="A man instructing a dog" srcset="images/Service-1-main_1-p-500.png 500w, images/Service-1-main_1-p-800.png 800w, images/Service-1-main_1Service-1-main.webp 1129w" class="service_content-img"></div>
+                    <div class="service_content-details-wrapper">
+                      <div class="content_details-header">
+                        <div class="content-details-icon-wrap"><img src="images/first-service-icon.svg" loading="lazy" alt="" class="content-details-icon-img"></div>
+                        <h3>Pet boarding and daycare</h3>
+                      </div>
+                      <div class="content_details-content">
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Safe and comfortable overnight boarding for when pet owners are away.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Daycare services for busy pet owners who need<br>a place for their pets to stay during the day.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Supervised playtime, socialization, and activities to keep pets engaged and entertained.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-w-id="3b897bba-0346-4308-1bd1-384159243732" style="-webkit-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0.1" class="services_content-wrapper reverse">
+                    <div class="service_content-details-wrapper">
+                      <div class="content_details-header">
+                        <div class="content-details-icon-wrap"><img src="images/second-service-icon.svg" loading="lazy" alt=""></div>
+                        <h3 class="service-heading">Grooming and spa treatments</h3>
+                      </div>
+                      <div class="content_details-content">
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Bathing, brushing, and drying to maintain a<br>clean and fresh coat.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Haircuts and styling according to breed-specific or<br>owner preferences.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Nail trimming, ear cleaning, and teeth brushing for<br>overall hygiene.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="service_content-img-wrapper"><img src="images/Service-2-main_1Service-2-main.webp" loading="lazy" width="564.5" sizes="(max-width: 479px) 82vw, (max-width: 767px) 66vw, (max-width: 991px) 45vw, 43vw" alt="A grooming session of a dog" srcset="images/Service-2-main_1-p-500.png 500w, images/Service-2-main_1Service-2-main.webp 1129w" class="service_content-img"></div>
+                  </div>
+                  <div data-w-id="3b897bba-0346-4308-1bd1-38415924374e" style="-webkit-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 6.25rem, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0.1" class="services_content-wrapper">
+                    <div class="service_content-img-wrapper"><img src="images/Service-3-main_1Service-3-main.webp" loading="lazy" width="564.5" sizes="(max-width: 479px) 82vw, (max-width: 767px) 66vw, (max-width: 991px) 45vw, 43vw" alt="A cat &amp; dog sitting in a room" srcset="images/Service-3-main_1-p-500.png 500w, images/Service-3-main_1-p-800.png 800w, images/Service-3-main_1Service-3-main.webp 1129w" class="service_content-img"></div>
+                    <div class="service_content-details-wrapper">
+                      <div class="content_details-header">
+                        <div class="content-details-icon-wrap"><img src="images/third-service-icon.svg" loading="lazy" alt=""></div>
+                        <h3 class="service-heading">Pet walking and play activities</h3>
+                      </div>
+                      <div class="content_details-content">
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Daily or scheduled walks to keep pets active and<br> healthy.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Playtime and interactive exercises tailored to each<br>pet&#x27;s needs.</p>
+                          </div>
+                        </div>
+                        <div class="details_content-wrapper">
+                          <div class="details_content-dot"></div>
+                          <div class="max-width-medium">
+                            <p>Exploration of local parks and trails for a change of<br>scenery.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="section-testimonials" class="section_testimonial">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="testimonial_wrapper">
+                <h2>Don’t take our word for it. <br>Trusted by 500+ clients.</h2>
+                <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944cd" class="testimonial_inner-wrapper">
+                  <div class="testimonial_clients-wrapper">
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944cf" class="testimonial_client-shot-0"></div>
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944d0" class="testimonial_client-shot-1"></div>
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944d1" class="testimonial_client-shot-2"></div>
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944d2" class="testimonial_client-shot-3"></div>
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944d3" class="testimonial_client-shot-4"></div>
+                    <div data-w-id="e3cbdbca-a440-2928-4e98-a8598d5944d4" class="testimonial_client-shot-5"></div><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-0"><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-1"><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-2"><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-3"><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-4"><img src="images/Polygon-1.svg" loading="lazy" alt="" class="testimonial_client-indicator-img-5">
+                  </div>
+                  <div class="testimonial_content-wrapper">
+                    <div class="testimonial_content-message-0">
+                      <p>&quot;I couldn&#x27;t be happier with the care my dog received. The dog walking services kept him active and happy. <br>The grooming sessions left him looking and smelling fantastic. Highly recommended!&quot;</p>
+                      <div class="testimonial_content-client-name">Lisa M, Pomeranian owner</div>
+                    </div>
+                    <div class="testimonial_content-message-1">
+                      <p class="testimonial_content-para">&quot;Trustworthy and reliable. Petpaws is my go-to for pet care. Highly recommended! Thank you for always exceeding my expectations!&quot;</p>
+                      <div class="testimonial_content-client-name">Michael R, Pug owner</div>
+                    </div>
+                    <div class="testimonial_content-message-2">
+                      <p class="testimonial_content-para">&quot;Amazing service! My dog absolutely loves going to petpaws. The staff is friendly, professional, and genuinely cares for the well-being of our furry friends. Highly recommended!&quot;</p>
+                      <div class="testimonial_content-client-name">Dave D, Rag Doll owner</div>
+                    </div>
+                    <div class="testimonial_content-message-3">
+                      <p class="testimonial_content-para">&quot;Absolutely thrilled with the care my pet receives at petpaws! Professional, reliable, and genuinely caring. Highly recommended!&quot;</p>
+                      <div class="testimonial_content-client-name">Simoni W, Golden retriever owner</div>
+                    </div>
+                    <div class="testimonial_content-message-4">
+                      <p class="testimonial_content-para">&quot;Incredible service! petpaws goes above and beyond to ensure the happiness and well-being of my furry friend. I trust them completely.&quot;</p>
+                      <div class="testimonial_content-client-name">David K, African gray parrot owner</div>
+                    </div>
+                    <div class="testimonial_content-message-5">
+                      <p class="testimonial_content-para">&quot;Exceptional pet care! petpaws provides top-notch service with a personal touch. I wouldn&#x27;t trust anyone else with my beloved pet.&quot;</p>
+                      <div class="testimonial_content-client-name">Jennifer G, Rabbit owner</div>
+                    </div>
+                  </div><img src="images/cirlce-1-petpaws_1cirlce-1-petpaws.webp" loading="lazy" width="518" sizes="(max-width: 479px) 78vw, (max-width: 767px) 250px, (max-width: 991px) 300px, 518px" alt="" srcset="images/cirlce-1-petpaws_1-p-500.png 500w, images/cirlce-1-petpaws_1cirlce-1-petpaws.webp 1036w" class="testimonial_bg-circle-1"><img src="images/circle-2-petpaws_1circle-2-petpaws.webp" loading="lazy" width="518" sizes="(max-width: 479px) 78vw, (max-width: 767px) 250px, (max-width: 991px) 300px, 518px" alt="" srcset="images/circle-2-petpaws_1-p-500.png 500w, images/circle-2-petpaws_1-p-800.png 800w, images/circle-2-petpaws_1circle-2-petpaws.webp 1036w" class="testimonial_bg-circle-2">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="section-articles" class="section_articles">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-large">
+              <div class="article_wrapper">
+                <h2>Pet Care Insights:  Articles for Pet Owners</h2>
+                <div data-current="Tab 1" data-easing="ease-in-out" data-duration-in="300" data-duration-out="300" class="article_tabs w-tabs">
+                  <div class="article_tabs-wrapper w-tab-content">
+                    <div data-w-tab="Tab 1" class="article_tabs-plane w-tab-pane w--tab-active">
+                      <a href="#" class="article_tabs-link w-inline-block">
+                        <div class="article_tabs-content-wrapper">
+                          <div class="article_tabs-content">
+                            <h3>Safe and Snug: Creating a Pet-Friendly Home</h3>
+                            <div class="margin-vertical margin-medium">
+                              <p>Ensure a pet-friendly home that combines safety, comfort, and fun for your furry friend. Remove potential hazards, create cozy resting areas, and provide interactive toys for endless enjoyment</p>
+                            </div>
+                            <div class="article_tabs-timer-wrapper"><img loading="lazy" src="images/Combined-Shape.svg" alt="" class="timer_img">
+                              <div class="timer_text">4 min read</div>
+                            </div>
+                          </div>
+                          <div class="article_tabs-img-wrapper hide-mobile-portrait"><img width="479" sizes="(max-width: 479px) 100vw, (max-width: 767px) 400px, 479px" alt="A man walking with his dog illustration" src="images/first-article-img_1first-article-img.webp" loading="lazy" srcset="images/first-article-img_1-p-500.png 500w, images/first-article-img_1first-article-img.webp 958w" class="article_tabs-inner-img"></div>
+                        </div>
+                      </a>
+                    </div>
+                    <div data-w-tab="Tab 2" class="article_tabs-plane w-tab-pane">
+                      <a href="#" class="article_tabs-link w-inline-block">
+                        <div class="article_tabs-content-wrapper">
+                          <div class="article_tabs-content">
+                            <h3>&quot;Local Pet Care Service Makes a Difference&quot; - The Pet Gazette</h3>
+                            <div class="margin-vertical margin-medium">
+                              <p>Featured article highlighting the positive impact of our pet care services on the local community and the care provided to furry friends.</p>
+                            </div>
+                            <div class="article_tabs-timer-wrapper"><img loading="lazy" src="images/Combined-Shape.svg" alt="" class="timer_img">
+                              <div class="timer_text">8 min read</div>
+                            </div>
+                          </div>
+                          <div class="article_tabs-img-wrapper"><img width="479" sizes="(max-width: 479px) 100vw, (max-width: 767px) 400px, 479px" alt="A woman with her cat illustration" src="images/article-2-img_1article-2-img.webp" loading="lazy" srcset="images/article-2-img_1-p-500.png 500w, images/article-2-img_1article-2-img.webp 1000w" class="article_tabs-inner-img"></div>
+                        </div>
+                      </a>
+                    </div>
+                    <div data-w-tab="Tab 3" class="article_tabs-plane w-tab-pane">
+                      <a href="#" class="article_tabs-link w-inline-block">
+                        <div class="article_tabs-content-wrapper">
+                          <div class="article_tabs-content">
+                            <h3>&quot;Essential Tips for Your Pet&#x27;s Health and Happiness&quot;</h3>
+                            <div class="margin-vertical margin-medium">
+                              <p>Learn the vital secrets to keeping your pet healthy and happy in this informative article. Discover expert tips on nutrition, exercise, and preventive care.</p>
+                            </div>
+                            <div class="article_tabs-timer-wrapper"><img loading="lazy" src="images/Combined-Shape.svg" alt="" class="timer_img">
+                              <div class="timer_text">6 min read</div>
+                            </div>
+                          </div>
+                          <div class="article_tabs-img-wrapper"><img width="479" sizes="(max-width: 479px) 100vw, (max-width: 767px) 400px, 479px" alt="An illustration of a family outing with their pet" src="images/article-3-img_1article-3-img.webp" loading="lazy" srcset="images/article-3-img_1-p-500.png 500w, images/article-3-img_1article-3-img.webp 1248w" class="article_tabs-inner-img"></div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="article_tabs-menu w-tab-menu">
+                    <a data-w-tab="Tab 1" class="tabs_menu-button w-inline-block w-tab-link w--current"></a>
+                    <a data-w-tab="Tab 2" class="tabs_menu-button w-inline-block w-tab-link"></a>
+                    <a data-w-tab="Tab 3" class="tabs_menu-button w-inline-block w-tab-link"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="section-CTA" class="section_cta">
+        <div class="padding-global">
+          <div class="container-large">
+            <div class="padding-section-footer">
+              <div class="cta_wrapper">
+                <div class="cta-content-wrapper">
+                  <h2 class="form-heading">Book your slot to treat your pets with the best care services</h2>
+                  <div class="cta_form-wrap w-form">
+                    <form id="email-form" name="email-form" data-name="Email Form" redirect="https://petpaws.webflow.io/thank-you" data-redirect="https://petpaws.webflow.io/thank-you" method="get" class="cta_form-wrap" data-wf-page-id="652d29c422ff746542226b49" data-wf-element-id="aafb8d55-ef05-2300-8f4b-7823fa7000b7">
+                      <div class="form_grid">
+                        <div class="form_field"><label for="name" class="form_field-label">Name</label><input class="form_text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="Enter your good name" type="text" id="name" required=""></div>
+                        <div class="form_field"><label for="Email" class="form_field-label">Email address</label><input class="form_text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="Enter your email" type="email" id="Email" required=""></div>
+                        <div class="form_field"><label for="Number" class="form_field-label">phone number</label><input class="form_text-field w-input" maxlength="256" name="Number" data-name="Number" placeholder="Enter you phone number" type="tel" id="Number" required=""></div>
+                        <div class="form_field"><label for="Location" class="form_field-label">your location</label><input class="form_text-field w-input" maxlength="256" name="Location" data-name="Location" placeholder="Enter your location" type="text" id="Location" required=""></div>
+                        <div id="w-node-_3ee7031a-8fae-2b27-6776-519c01f9e0c0-42226b49" class="form_textarea-button-wrapper">
+                          <div id="w-node-aafb8d55-ef05-2300-8f4b-7823fa7000c9-42226b49" class="form_field"><label for="Message" class="form_field-label">TELL US ABOUT YOUR PET</label><textarea id="Message" name="Message" maxlength="5000" data-name="Message" placeholder="Start with your pet’s breed, age &amp; the services you wish to select for your pet. (optional)" class="form_text-field is-text-area w-input"></textarea></div>
+                          <div class="form_button-wrapper"><input type="submit" data-wait="Please wait..." class="button is-secondary w-button" value="Book appointment">
+                            <div class="form_offer-text">&amp; get 50% off on your first  service</div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="form_success-message w-form-done">
+                      <div class="success_lottie-wrapper">
+                        <div class="success_lottie" data-w-id="aafb8d55-ef05-2300-8f4b-7823fa7000d2" data-animation-type="lottie" data-src="https://uploads-ssl.webflow.com/648735a565eade912afef66b/6489e7d133f8cda7174c24b4_70563-green-tick.json" data-loop="0" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="3" data-duration="0"></div>
+                        <div class="success_message">Thank you! Your submission has been received!</div>
+                      </div>
+                    </div>
+                    <div class="form_error-message w-form-fail">
+                      <div class="error_message">Oops! Something went wrong while submitting the form. Try again</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="cta_bg-wrapper"><img src="images/Form-BG-shape-main_1Form-BG-shape-main.webp" loading="lazy" width="1461.5" sizes="(max-width: 991px) 100vw, 1461.5px" alt="A yellow object with a black background." srcset="images/Form-BG-shape-main_1-p-500.png 500w, images/Form-BG-shape-main_1-p-800.png 800w, images/Form-BG-shape-main_1-p-1080.png 1080w, images/Form-BG-shape-main_1-p-1600.png 1600w, images/Form-BG-shape-main_1-p-2000.png 2000w, images/Form-BG-shape-main_1Form-BG-shape-main.webp 3228w" class="cta_bg-img"></div>
+        <div class="cta_overflow-embed w-embed">
+          <style>
+	.section_CTA {
+  	overflow: clip;
+  }
+</style>
+        </div>
+      </section>
+    </main>
+    <section class="footer_component">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="footer_copyrights-wrapper">
+            <div class="copyrights_text"><strong>©</strong> 2023. All rights reserved. Petpaws Ltd.</div>
+            <a href="#" class="privacy_link w-inline-block">
+              <div class="privacy_text">Privacy policy</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=652d29c322ff746542226acc" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+</body>
+</html>
